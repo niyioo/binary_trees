@@ -1,1 +1,5 @@
-0-main.c
+.vscode
+.vscode/tasks.json
+.vscode/c_cpp_properties.json
+101-lvl.exe
+101-main.c

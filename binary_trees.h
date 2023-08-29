@@ -45,5 +45,28 @@ int binary_tree_is_ancestor(const binary_tree_t *node,
 							const binary_tree_t *target);
 void binary_tree_levelorder(const binary_tree_t *tree,
 							void (*func)(int));
+int binary_tree_is_complete(const binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+int binary_tree_is_bst(const binary_tree_t *tree);
+int is_bst_recursive(const binary_tree_t *tree, const int *min, const int *max);
+bst_t *bst_insert(bst_t **tree, int value);
+bst_t *array_to_bst(int *array, size_t size);
+bst_t *bst_search(const bst_t *tree, int value);
+bst_t *bst_remove(bst_t *root, int value);
+bst_t *bst_find_min(bst_t *node);
+int binary_tree_is_avl(const binary_tree_t *tree);
+avl_t *avl_rotate_left(avl_t *y);
+avl_t *avl_rotate_right(avl_t *x);
+avl_t *avl_insert(avl_t **tree, int value);
+avl_t *array_to_avl(int *array, size_t size);
+avl_t *avl_remove(avl_t *root, int value);
+avl_t *sorted_array_to_avl(int *array, size_t size);
+int binary_tree_is_heap(const binary_tree_t *tree);
+heap_t *heapify(heap_t *new);
+heap_t *heap_insert(heap_t **root, int value);
+heap_t *array_to_heap(int *array, size_t size);
+int heap_extract(heap_t **root);
+int *heap_to_sorted_array(heap_t *heap, size_t *size);
 
 #endif /* _BINARY_TREES_H_ */
