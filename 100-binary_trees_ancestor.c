@@ -9,22 +9,22 @@
  * Return: Pointer to the lowest common ancestor, or NULL if not found
  */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
-                                     const binary_tree_t *second)
+		const binary_tree_t *second)
 {
-    const binary_tree_t *ancestor;
+	const binary_tree_t *ancestor;
 
-    if (!first || !second)
-        return (NULL);
+	if (!first || !second)
+		return (NULL);
 
-    ancestor = first;
-    while (ancestor)
-    {
-        if (binary_tree_is_ancestor(ancestor, second))
-            return ((binary_tree_t *)ancestor);
-        ancestor = ancestor->parent;
-    }
+	ancestor = first;
+	while (ancestor)
+	{
+		if (binary_tree_is_ancestor(ancestor, second))
+			return ((binary_tree_t *)ancestor);
+		ancestor = ancestor->parent;
+	}
 
-    return (NULL);
+	return (NULL);
 }
 
 /**
@@ -35,14 +35,14 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
  * Return: 1 if node is an ancestor of target, otherwise 0
  */
 int binary_tree_is_ancestor(const binary_tree_t *node,
-                            const binary_tree_t *target)
+		const binary_tree_t *target)
 {
-    if (!node)
-        return (0);
+	if (!node)
+		return (0);
 
-    if (node == target)
-        return (1);
+	if (node == target)
+		return (1);
 
-    return (binary_tree_is_ancestor(node->left, target) ||
-            binary_tree_is_ancestor(node->right, target));
+	return (binary_tree_is_ancestor(node->left, target) ||
+			binary_tree_is_ancestor(node->right, target));
 }
