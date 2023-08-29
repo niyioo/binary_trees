@@ -1,3 +1,3 @@
-Inserting the value n
-Removing the node with the value n
-Searching for a node in a BST of size 
+O(log n)
+O(log n)
+O(log n)
