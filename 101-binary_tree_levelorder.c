@@ -11,26 +11,26 @@
  * If tree or func is NULL, do nothing.
  */
 void binary_tree_levelorder(const binary_tree_t *tree,
-                            void (*func)(int))
+		void (*func)(int))
 {
-    if (!tree || !func)
-        return;
+	if (!tree || !func)
+		return;
 
-    binary_tree_t *queue[10000];
-    int front = 0, rear = 0;
+	binary_tree_t *queue[10000];
+	int front = 0, rear = 0;
 
-    queue[rear++] = (binary_tree_t *)tree;
+	queue[rear++] = (binary_tree_t *)tree;
 
-    while (front < rear)
-    {
-        binary_tree_t *node = queue[front++];
+	while (front < rear)
+	{
+		binary_tree_t *node = queue[front++];
 
-        func(node->n);
+		func(node->n);
 
-        if (node->left)
-            queue[rear++] = node->left;
+		if (node->left)
+			queue[rear++] = node->left;
 
-        if (node->right)
-            queue[rear++] = node->right;
-    }
+		if (node->right)
+			queue[rear++] = node->right;
+	}
 }
