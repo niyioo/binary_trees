@@ -12,16 +12,16 @@ avl_t *array_to_avl(int *array, size_t size)
     avl_t *root = NULL;
 
     if (!array || size == 0)
-        return NULL;
+	    return (NULL);
 
     for (i = 0; i < size; i++)
     {
-        if (avl_insert(&root, array[i]) == NULL)
-        {
-            binary_tree_delete(root); // Clean up in case of failure
-            return NULL;
-        }
+	    if (avl_insert(&root, array[i]) == NULL)
+	    {
+		    binary_tree_delete(root); /** Clean up in case of failure*/
+		    return (NULL);
+	    }
     }
 
-    return root;
+    return (root);
 }

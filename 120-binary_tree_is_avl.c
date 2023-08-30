@@ -10,7 +10,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
     size_t left_height, right_height;
 
     if (!tree)
-        return (0);
+	    return (0);
 
     left_height = binary_tree_height(tree->left);
     right_height = binary_tree_height(tree->right);
@@ -26,7 +26,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 int binary_tree_balance(const binary_tree_t *tree)
 {
     if (!tree)
-        return (0);
+	    return (0);
 
     return (binary_tree_height(tree->left) - binary_tree_height(tree->right));
 }
@@ -41,11 +41,11 @@ int binary_tree_is_avl(const binary_tree_t *tree)
     int balance;
 
     if (!tree)
-        return (0);
+	    return (0);
 
     balance = binary_tree_balance(tree);
     if (balance > 1 || balance < -1)
-        return (0);
+	    return (0);
 
     return (binary_tree_is_avl(tree->left) && binary_tree_is_avl(tree->right));
 }

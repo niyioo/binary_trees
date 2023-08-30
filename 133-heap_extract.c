@@ -14,7 +14,7 @@ int heap_extract(heap_t **root)
     size_t bits = 0;
 
     if (!root || !*root)
-        return (0);
+	    return (0);
 
     extracted_value = (*root)->n;
     last_node = binary_tree_get_last(*root, &bits);
@@ -22,18 +22,18 @@ int heap_extract(heap_t **root)
 
     if (last_node->parent)
     {
-        if (last_node->parent->right)
-            last_node->parent->right = NULL;
-        else
-            last_node->parent->left = NULL;
+	    if (last_node->parent->right)
+		    last_node->parent->right = NULL;
+	    else
+		    last_node->parent->left = NULL;
     }
     else
-        *root = NULL;
+	    *root = NULL;
 
     if (*root != last_node)
     {
-        (*root)->n = last_value;
-        heapify_down(*root);
+	    (*root)->n = last_value;
+	    heapify_down(*root);
     }
 
     free(last_node);

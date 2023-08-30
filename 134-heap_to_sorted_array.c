@@ -14,16 +14,16 @@ int *heap_to_sorted_array(heap_t *heap, size_t *size)
     size_t array_size = binary_tree_size(heap);
 
     if (!heap || !size)
-        return (NULL);
+	    return (NULL);
 
     sorted_array = malloc(sizeof(int) * array_size);
     if (!sorted_array)
-        return (NULL);
+	    return (NULL);
 
     for (*size = 0; *size < array_size; (*size)++)
     {
-        sorted_array[*size] = heap->n;
-        heap_extract(&heap);
+	    sorted_array[*size] = heap->n;
+	    heap_extract(&heap);
     }
 
     return (sorted_array);

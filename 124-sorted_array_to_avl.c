@@ -9,16 +9,16 @@
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
     if (size == 0)
-        return NULL;
+	    return (NULL);
 
     size_t mid = size / 2;
     avl_t *root = avl_create_node(array[mid]);
 
     if (!root)
-        return NULL;
+	    return (NULL);
 
     root->left = sorted_array_to_avl(array, mid);
     root->right = sorted_array_to_avl(array + mid + 1, size - mid - 1);
 
-    return root;
+    return (root);
 }

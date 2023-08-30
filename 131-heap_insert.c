@@ -14,10 +14,10 @@ heap_t *heapify(heap_t *new)
 
     while (current->parent && current->n > current->parent->n)
     {
-        temp = current->n;
-        current->n = current->parent->n;
-        current->parent->n = temp;
-        current = current->parent;
+	    temp = current->n;
+	    current->n = current->parent->n;
+	    current->parent->n = temp;
+	    current = current->parent;
     }
     return (current);
 }
@@ -34,31 +34,31 @@ heap_t *heap_insert(heap_t **root, int value)
     heap_t *new, *current;
 
     if (!root)
-        return (NULL);
+	    return (NULL);
 
     new = binary_tree_node(NULL, value);
     if (!new)
-        return (NULL);
+	    return (NULL);
 
     if (!*root)
     {
-        *root = new;
-        return (new);
+	    *root = new;
+	    return (new);
     }
 
     current = *root;
     while (current->left && current->right)
     {
-        if (binary_tree_balance(current->left) >= 0)
-            current = current->left;
-        else
-            current = current->right;
+	    if (binary_tree_balance(current->left) >= 0)
+		    current = current->left;
+	    else
+		    current = current->right;
     }
 
     if (!current->left)
-        current->left = new;
+	    current->left = new;
     else
-        current->right = new;
+	    current->right = new;
 
     new->parent = current;
     return (heapify(new));

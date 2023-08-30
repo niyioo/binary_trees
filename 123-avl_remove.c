@@ -9,26 +9,26 @@
 avl_t *avl_remove(avl_t *root, int value)
 {
     if (!root)
-        return NULL;
+	    return (NULL);
 
     if (value < root->n)
-        root->left = avl_remove(root->left, value);
+	    root->left = avl_remove(root->left, value);
     else if (value > root->n)
-        root->right = avl_remove(root->right, value);
+	    root->right = avl_remove(root->right, value);
     else
     {
-        if (!root->left || !root->right)
-        {
-            avl_t *temp = root->left ? root->left : root->right;
-            free(root);
-            return temp;
-        }
+	    if (!root->left || !root->right)
+	    {
+		    avl_t *temp = root->left ? root->left : root->right;
+		    free(root);
+		    return (temp);
+	    }
 
-        avl_t *temp = avl_find_min(root->right);
-        root->n = temp->n;
-        root->right = avl_remove(root->right, temp->n);
+	    avl_t *temp = avl_find_min(root->right);
+	    root->n = temp->;
+	    root->right = avl_remove(root->right, temp->n);
     }
 
     root = avl_balance(root);
-    return root;
+    return (root);
 }
