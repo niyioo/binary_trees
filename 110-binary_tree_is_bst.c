@@ -8,7 +8,7 @@
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-    return is_bst_recursive(tree, NULL, NULL);
+    (return) is_bst_recursive(tree, NULL, NULL);
 }
 
 /**
@@ -22,11 +22,11 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 int is_bst_recursive(const binary_tree_t *tree, const int *min, const int *max)
 {
     if (!tree)
-        return 1;
+	    return (1);
 
     if ((min && tree->n <= *min) || (max && tree->n >= *max))
-        return 0;
+	    return (0);
 
     return (is_bst_recursive(tree->left, min, &tree->n) &&
-            is_bst_recursive(tree->right, &tree->n, max));
+		    is_bst_recursive(tree->right, &tree->n, max));
 }
