@@ -9,7 +9,7 @@
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-	(return) is_bst_recursive(tree, NULL, NULL);
+	return (is_bst_recursive(tree, NULL, NULL));
 }
 
 /**
